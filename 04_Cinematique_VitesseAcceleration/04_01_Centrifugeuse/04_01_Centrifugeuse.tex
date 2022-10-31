@@ -34,21 +34,14 @@ Fiche  2 -- \xxactivite%
 }%figues de la page de garde
 
 
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
+\input{\repRel/Style/new_pagegarde}
+
 \setlength{\columnseprule}{.1pt}
 
 \pagestyle{fancy}
 \thispagestyle{plain}
 
-\ifprof
-\vspace{5cm}
-\else
-\vspace{4cm}
-\fi
+
 
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 
@@ -59,10 +52,10 @@ Fiche  2 -- \xxactivite%
 
 
 
-\ifprof
-\else
-\begin{multicols}{2}
-\fi
+%\ifprof
+%\else
+%\begin{multicols}{2}
+%\fi
 
 
 Afin d'analyser les effets de l'accélération sur le corps humaine, le CNRS / MEDES a développé une centrifugeuse humaine. On donne ci-dessous la modélisation cinématique de la centrifugeuse.
@@ -283,9 +276,9 @@ $$\vectv{G}{S_2}{S_0} = \left[\dfrac{\text{d} \vect{O_0G}}{\text{d}t}\right]_{\m
 %\begin{corrige}
 %\end{corrige}\else \fi
 
-\ifprof
-\else
-\end{multicols}
-\fi
+%\ifprof
+%\else
+%\end{multicols}
+%\fi
 
 

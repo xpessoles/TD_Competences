@@ -5,7 +5,7 @@
 
 \def\xxnumchapitre{Révision cinématique \vspace{.2cm}}
 \def\xxchapitre{\hspace{.12cm} Résolution cinématique}
-\def\xxonglet{\textsf{Rév -- Stat}}
+%\def\xxonglet{\textsf{Rév -- Stat}}
 \def\xxactivite{TD 04}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
@@ -36,23 +36,14 @@ Fiche  2 -- \xxactivite%
 }%figues de la page de garde
 
 
+\input{\repStyle/pagegarde_TD}
 
-
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
 \setlength{\columnseprule}{.1pt}
 
 \pagestyle{fancy}
 \thispagestyle{plain}
 
-\ifprof
 \vspace{5cm}
-\else
-\vspace{5cm}
-\fi
 
 \def\columnseprulecolor{\color{ocre}}
 \setlength{\columnseprule}{0.4pt} 

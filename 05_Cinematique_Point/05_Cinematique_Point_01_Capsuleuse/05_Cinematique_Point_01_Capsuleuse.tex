@@ -3,63 +3,42 @@
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 
-\def\xxnumchapitre{Révision cinématique \vspace{.2cm}}
-\def\xxchapitre{\hspace{.12cm} Résolution cinématique}
-\def\xxonglet{\textsf{Rév -- Stat}}
-\def\xxactivite{Application 01}
+\def\xxnumchapitre{Révisio  \vspace{.2cm}}
+\def\xxchapitre{\hspace{.12cm} Résolution des problèmes de cinématique -- Cinématique du contact ponctuel}
+\def\xxonglet{\textsf{Rév -- Cin}}
+\def\xxactivite{TD 01}
 \def\xxauteur{\textsl{Xavier Pessoles}}
 
 \def\xxpied{%
-Révision cinématique \\
-Fiche  2 -- \xxactivite%
+Révision cinématique -- Résolution des problèmes de cinématique\\
+Fiche 1 -- \xxactivite%
 }
-
-\def\xxtitreexo{Capsuleuse de bocaux  \ifnormal $\star$ \else \fi \ifdifficile $\star\star$ \else \fi \iftdifficile $\star\star\star$ \else \fi}
-
-\def\xxsourceexo{\hspace{.2cm} \footnotesize{Xavier Pessoles}}
-
 
 \def\xxcompetences{%
 \textsl{%
-\textbf{Savoirs et compétences :}\\} \vspace{-.5cm}
-%\begin{itemize}
-%\item \textit{Res2.C18} : principe fondamental de la statique;
-%\item \textit{Res2.C19} : équilibre d’un solide, d’un ensemble de solides;
-%\item \textit{Res2.C20} : théorème des actions réciproques.
+\textbf{Savoirs et compétences :}\\
+%\vspace{-.4cm}
+%\begin{itemize}[label=\ding{112},font=\color{ocre}] 
+%%\item \textit{Res1.C4 : } Correction
+% \item \textit{Res1.C4.SF1 : } Proposer la démarche de réglage d’un correcteur proportionnel
+%%proportionnel intégral 
+%%et à avance de phase
+%\item \textit{Con.C2 : } 	Correction d’un système asservi	
+%\item \textit{Con.C2.SF1 : } Choisir un type de correcteur adapté
 %\end{itemize}
-}
+}}
 
+\def\xxauteur{\textsl{Xavier Pessoles}}
+
+\def\xxtitreexo{Capsuleuse de bocaux -- Galet}
+\def\xxsourceexo{\hspace{.2cm} \footnotesize{}}
 
 \def\xxfigures{
-\includegraphics[width=.6\textwidth]{capsuleuse}
+%\includegraphics[width=.55\textwidth]{fig_00}
 }%figues de la page de garde
 
-
-
-
-\iflivret
-\input{../../style/new_pagegarde}
-\else
-\input{../../style/new_pagegarde}
-\fi
-\setlength{\columnseprule}{.1pt}
-
-\pagestyle{fancy}
-\thispagestyle{plain}
-
-\ifprof
-\vspace{5cm}
-\else
+\input{\repStyle/pagegarde_TD.tex}
 \vspace{4cm}
-\fi
-
-\def\columnseprulecolor{\color{ocre}}
-\setlength{\columnseprule}{0.4pt} 
-
-%%%%%%%%%%%%%%%%%%%%%%%
-
-\setcounter{exo}{0}
-
 
 
 \ifprof
@@ -117,8 +96,7 @@ On note :
 %\subparagraph{}
 %\textit{Indiquer une différence majeure entre le système réel et le système modélisé.}
 
-\subparagraph{}
-\textit{Donner le paramétrage associé au schéma cinématique.}
+\question{Donner le paramétrage associé au schéma cinématique.}
 
 \ifprof%
 \begin{corrige}
@@ -128,8 +106,7 @@ On note :
 \end{corrige}
 \else \fi
 
-\subparagraph{}
-\textit{\'Etablir la loi entrée/sortie du système.}
+\question{\'Etablir la loi entrée/sortie du système.}
 
 
 \ifprof%
@@ -159,8 +136,7 @@ $$
 \end{corrige}
 \else \fi
 
-\subparagraph{}
-\textit{Donner une méthode permettant de valider la cahier des charges vis à vis de la vitesse de rotation de la croix de Malte.}
+\question{Donner une méthode permettant de valider la cahier des charges vis à vis de la vitesse de rotation de la croix de Malte.}
 
 
 \ifprof%
@@ -177,9 +153,7 @@ Le tracé Excel permet de valider que la vitesse de rotation de la croix de Malt
 \else \fi
 
 
-\subparagraph{}
-%\textit{Donner l'expression du torseur cinématique de $S_1$ par rapport à $S_0$ au point $I$.}
-\textit{Donner l'expression de $\vect{V(I,S_1/S_0)}$ et $\vecto{S_1}{S_0}$.}
+\question{Donner l'expression de $\vect{V(I,S_1/S_0)}$ et $\vecto{S_1}{S_0}$.}
 
 \ifprof%
 \begin{corrige}
@@ -214,9 +188,7 @@ $$
 \end{corrige}
 \else \fi
 
-\subparagraph{}
-%\textit{Donner l'expression du torseur cinématique de $S_2$ par rapport à $S_0$ au point $I$.}
-\textit{Donner l'expression de $\vect{V(I,S_2/S_0)}$ et $\vecto{S_2}{S_0}$.}
+\question{Donner l'expression de $\vect{V(I,S_2/S_0)}$ et $\vecto{S_2}{S_0}$.}
 \ifprof%
 \begin{corrige}
 $$\{\mathcal{V}(S_2/S_0)\} = 
@@ -249,8 +221,7 @@ $$
 \end{corrige}
 \else \fi
 
-\subparagraph{}
-\textit{En déduire l'expression de $\vect{V(I,S_2/S_1)}$ dans la base $\mathcal{R}_2$. On donne $ \vect{x_1} 
+\question{En déduire l'expression de $\vect{V(I,S_2/S_1)}$ dans la base $\mathcal{R}_2$. On donne $ \vect{x_1} 
 =\cos(\alpha-\beta)\vect{x_2} + \sin(\alpha-\beta)\vect{y_2}
 $.}
 
@@ -306,8 +277,7 @@ $$
 \end{corrige}
 \else \fi
 
-\subparagraph{}
-\textit{D'après le paramétrage adopté, quelle est la direction du vecteur vitesse du solide $S_1$ par rapport à $S_2$ ? %Calculer ce vecteur comme dérivée du vecteur position. 
+\question{D'après le paramétrage adopté, quelle est la direction du vecteur vitesse du solide $S_1$ par rapport à $S_2$ ? %Calculer ce vecteur comme dérivée du vecteur position. 
 En utilisant les résultats de la question précédente, déduire une condition de fonctionnement du mécanisme.}
 
 
@@ -333,8 +303,7 @@ $$
 \end{corrige}
 \else\fi
 
-\subparagraph{}
-\textit{$\vect{V(I,S_2/S_1)}\cdot\vect{x_2}$ est appelée \textbf{vitesse de glissement}. Quel problème technologique pose l'existence de cette vitesse ? Ce problème est-il pris en compte sur la capsuleuse ? Si oui, comment ? Si non, proposez une modification du système permettant la prise en compte de ce problème.}
+\question{$\vect{V(I,S_2/S_1)}\cdot\vect{x_2}$ est appelée \textbf{vitesse de glissement}. Quel problème technologique pose l'existence de cette vitesse ? Ce problème est-il pris en compte sur la capsuleuse ? Si oui, comment ? Si non, proposez une modification du système permettant la prise en compte de ce problème.}
 
 \ifprof%
 \begin{corrige}
@@ -360,8 +329,7 @@ Le galet a un diamètre extérieur de $\SI{16}{mm}$. D'après la documentation c
  \includegraphics[width=.9\linewidth]{schema2}
 \end{center}
 
-\subparagraph{}
-\textit{Quelle est la modification sur le paramétrage du système ?}
+\question{Quelle est la modification sur le paramétrage du système ?}
 \ifprof%
 \begin{corrige}
 
@@ -370,8 +338,7 @@ Un angle $\gamma$ correspondant à la rotation du galet sur lui même apparaît.
 \end{corrige}
 \else \fi
 
-\subparagraph{}
-\textit{Comment est-il possible de traduire l'hypothèse de \textbf{roulement} sans glissement ?}
+\question{Comment est-il possible de traduire l'hypothèse de \textbf{roulement} sans glissement ?}
 \ifprof%
 \begin{corrige}
 La vitesse est nulle entre le galet et la croix de Malte est nulle au point $I$ :
@@ -380,8 +347,7 @@ $$
 $$
 \end{corrige}\else\fi
 
-\subparagraph{}
-\textit{Calculer la vitesse de rotation du galet $\dot{\gamma}$ en commençant par exprimer $\vect{V(I,S_3/S_2)}$?}
+\question{Calculer la vitesse de rotation du galet $\dot{\gamma}$ en commençant par exprimer $\vect{V(I,S_3/S_2)}$?}
 \textit{Indice : décomposer $\vect{V(I,S_3/S_2)}$ en fonction des mouvements connus.}
 \ifprof%
 \begin{corrige}
@@ -449,8 +415,7 @@ $$
 \end{corrige}
 \else \fi
 
-\subparagraph{}
-\textit{Valider le choix du galet.}
+\question{Valider le choix du galet.}
 \ifprof%
 \begin{corrige}
 

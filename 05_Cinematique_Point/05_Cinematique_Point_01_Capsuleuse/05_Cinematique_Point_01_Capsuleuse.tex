@@ -46,7 +46,8 @@ Fiche 1 -- \xxactivite%
 \begin{multicols}{2}
 \fi
 
-
+\ifprof
+\else
 Le conditionnement de nombreux produits alimentaires est réalisé dans des bocaux en verre fermés par des capsules vissées. La société RAVOUX, spécialisée dans le conditionnement, a créé ce prototype afin d'optimiser ses machines de production. Elle est donc équipée de nombreux capteurs permettant, via un ordinateur, d'optimiser les paramètres de production tels que qualité totale, production maximale, ...
 
 Le système de laboratoire proposé s'insère dans une chaîne de conditionnement de produits alimentaires, entre l'unité de remplissage des bocaux et le poste d'étiquetage. Sa fonction principale est la «fermeture étanche de bocaux préalablement remplis de produits alimentaires»
@@ -73,10 +74,13 @@ On s'intéresse ici au système de croix de Malte. Il permet d'obtenir une rotat
 
 Lors de la rotation de la croix de Malte, la capsuleuse déplace deux flacons. Afin d'accroître la productivité, il faut diminuer la durée de cette phase. Cependant, si la croix de Malte tourne trop vite, les flacons basculent ce qui entraîne un mauvais fonctionnement du système. Ainsi, on désire que la \textbf{vitesse de la croix soit inférieure à 50 tours/minute}. 
 
+\fi
 
 
 \subsection*{Modélisation sans galet}
 
+\ifprof
+\else
 Afin de modéliser le système à croix de malte, on propose le schéma cinématique ci-contre. 
 
 
@@ -91,7 +95,7 @@ On note :
 \begin{center}
  \includegraphics[width=\linewidth]{schema1}
 \end{center}
-
+\fi
 
 %\subparagraph{}
 %\textit{Indiquer une différence majeure entre le système réel et le système modélisé.}
@@ -315,7 +319,8 @@ Cette vitesse de glissement provoque le frottement du doigt sur la croix de Malt
 
 
 \subsection*{Modélisation avec galet}
-
+\ifprof
+\else
 On considère maintenant l'existence d'un galet $S_3$ en bout de de l'arbre $S_1$. On fait l'hypothèse que le galet roule sans glisser dans le $S_2$. $S_3$ et $S_1$ sont en liaison pivot d'axe $\vect{z_0}$ et de centre $A$.
 
 Le galet a un diamètre extérieur de $\SI{16}{mm}$. D'après la documentation constructeur, la vitesse de rotation du galet ne doit pas dépasser les $\SI{5000}{tr/min}$.
@@ -328,6 +333,7 @@ Le galet a un diamètre extérieur de $\SI{16}{mm}$. D'après la documentation c
 \begin{center}
  \includegraphics[width=.9\linewidth]{schema2}
 \end{center}
+\fi
 
 \question{Quelle est la modification sur le paramétrage du système ?}
 \ifprof%

@@ -13,6 +13,12 @@ Il existe des coinceurs monoblocs, qui permettent un coincement dans une fissure
 On se propose d’étudier les conditions de retenue d’un coinceur « Rock Empire Flex » schématisé ci dessous, en modélisation plane. Dans le cadre de ce modèle, on considère donc les 2 cames \textbf{2} et \textbf{3} en appui sur les parois suppoéses parallèles et en liaison pivot avec l'axe cylindrique \textbf{1}. C'est sur cet axe qu'est accroché le grimpeur.  
 On note $\alpha$ l'angle $OIA$ supposé connu (en le mesurant). 
 
+
+Suite à une chute, la corde qui retient le grimpeur, exerce un effort de \SI{10}{kN} sur le câble, donc
+sur l’axe du << friend >>. Le contact avec le rocher (fissure à bords parallèles) s’effectue avec
+frottement.
+
+
 \begin{center}
 \includegraphics[width=\linewidth]{fig_07}
 \end{center}
@@ -68,7 +74,7 @@ et $\vectf{1}{2} =- F \vect{u}$.
 
 On a donc $F_{02}= F_{03}$ et $2 F_{02} \sin \alpha = F$ soit $F_{02} = \dfrac{F}{2 \sin \alpha}$.
 
-
+Pour $\alpha = 10 \degres$,  $F_{02} = \dfrac{F}{2 \sin \alpha} = \dfrac{10 000}{2 \sin \alpha} = \SI{28793}{N}$.
 \end{corrige}
 \else
 \fi

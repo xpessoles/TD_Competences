@@ -1,0 +1,107 @@
+\section{Étude de l’asservissement en position du vérin}
+
+\begin{obj}
+Choisir un correcteur approprié permettant de satisfaire le cahier des charges vis-à-vis des 
+exigences concernant l’asservissement en position du vérin électrique suivant l’axe $\vect{y_0}$
+conformément à la figure 11.
+\end{obj}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.8\linewidth]{fig_11.png}
+\caption{Déplacement de la tige du vérin\label{fig_11}}
+\end{figure}
+
+La mesure de la distance est obtenue grâce à un capteur à ultrason permettant de délivrer, sous la 
+forme d’impulsions, une image de la distance entre la structure sur SEIS et le sol. Cette information 
+est ensuite traitée afin de générer un signal image de la distance parcourue par la tige du vérin.
+
+%L’étude précédente a permis d’obtenir un modèle de comportement de la MCC intégré dans le schéma bloc de l’asservissement présenté en figure \ref{fig_12} pour lequel $C_r(p)=0$
+%
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=\linewidth]{fig_12.png}
+%\caption{Schéma-bloc de l’asservissement en position du vérin électrique\label{fig_12}}
+%\end{figure}
+
+\textbf{Notations et spécifications :}
+\begin{multicols}{2}
+\begin{itemize}
+\item gain du capteur: $\indice{K}{capt} = \SI{588}{impulsions/m}$;
+\item gain de l’ensemble réducteur et vis-écrou : $\indice{K}{red} = \SI{19.1e-6}{m/rad}$;
+\item vitesse linéaire de la tige du vérin : $V(t)$ en \si{m.s^{-1}};
+\item déplacement linéaire de la tige du vérin : $d(t)$ en $\si{V}$;
+\item correcteur: $C_0(p)$;
+\item gain du hacheur: $\indice{K}{H} = 1,163$.
+\end{itemize}
+\end{multicols}
+
+Pour toute la suite du sujet, on considère : $\indice{C}{r}(p)=0$. Tout d'abord, le correcteur est consdéré unitaire $\indice{C}{0}(p)=1$.
+
+%\question{Donner l'expression littérale de la fonction de transfert en b}
+\question{Proposer un schéma-bloc permettant de modéliser l'asservissement du déplacement de la tige.}
+
+%\question{Donner l’expression littérale de $M(p)$ et, pour garantir un bon asservissement, l’expression 
+%littéralede $\indice{K}{adapt}$.}
+
+\question{ Déterminer l’expression littérale de la fonction de transfert en boucle ouverte $\indice{G}{BO}(p)$ et mettre celle-ci sous forme canonique. Donner la classe de cette fonction de transfert. En déduire
+ la précision du système.}
+ 
+  On donne l’expression numérique dela fonction de transfert en boucle ouverte :
+  $\indice{G}{BO}(p)=\dfrac{0,0112}{p\left( 0,00028 p +1\right)}$.
+
+\question{Tracer les diagrammes de Bode asymptotiques et réels de la fonction de transfert $\indice{G}{BO}(p)$ sur le DR3. En déduire la marge de phase de l’asservissement en effectuant toutes les constructions 
+graphiques nécessaires. Conclure sur le respect de l’exigence 006 «Stabilité ».}
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=.8\linewidth]{dr_03.png}
+\caption{Diagramme de Bode \label{dr_03}}
+\end{figure}
+
+ On désire quantifier la rapidité du système à la suite d’une sollicitation en échelon. On donne les 
+relations permettant de calculer le temps de réponse à 5\%, noté $\indice{t}{r5\%}$, pour un système d’ordre deux (avec $\xi$ le facteur d’amortissement et $\omega_0$ la pulsation propredu système non amorti):
+
+$$
+\left\{ 
+\begin{array}{l}
+\xi < \dfrac{1}{\sqrt{2}}, \indice{t}{r5\%} \simeq \dfrac{3\xi}{ \omega_0} \\
+\xi > \dfrac{1}{\sqrt{2}}, \indice{t}{r5\%} \simeq \dfrac{6\xi }{\omega_0} \\
+\end{array}
+\right.
+$$ 
+
+
+\question{ Déterminer et calculer les paramètres caractéristiques de la fonction de transfert en boucle 
+fermée $\indice{G}{BF}=\dfrac{D(p)}{D_c(p)}$. En déduire le temps de réponse de l’asservissement en vitesse. Conclure sur le respect de l’exigence 004 «Rapidité».}
+
+Afin d’améliorer les performances de l’asservissement, on choisit un correcteur proportionnel de gain 
+$\indice{K}{D}$ tel que $C_0(p) = \indice{K}{D}$. La valeur numérique du gain sera déterminéeà partir de deux méthodes :
+\begin{itemize}
+\item approche graphique, à partir de la marge de phase (maîtrise de la stabilité);
+\item approche analytique, à partir d’un comportement imposé.
+\end{itemize}
+
+\question{À partir de constructions graphiques sur la figure \ref{dr_03}, donner la valeur du gain du correcteur $\indice{K}{D1}$, permettant de garantir une marge de phase supérieure à 70\degres. La valeur de $\indice{K}{D1}$ vous paraît-elle pertinente et réaliste ?}
+
+ On impose un temps de réponse à 5\% de \SI{5}{s} et un facteur d’amortissement $\xi$ supérieur à 1.
+ On donne l’expression numérique de $\indice{G}{BF}(p)$ avec un correcteur de gain $\indice{K}{D}$ :
+ $\indice{G}{BF}(p)=\dfrac{1}{\dfrac{0,025}{K_D}p^2+\dfrac{89}{K_D}p +1}$.
+ 
+ 
+\question{À partir des équations liant le temps de réponse, le facteur d’amortissement et la pulsation 
+propre ainsi que de l’expression numérique de $\indice{G}{BF}(p)$, donner une expression liant $t_{r5\%}$  et $\indice{K}{D2}$. En déduire la valeur de $\indice{K}{D2}$ permettant de respecter la contrainte imposée en termes de rapidité.}
+
+
+ On donne ci-dessous les tracés de la sortie du système asservi à la suite d’un échelon de consigne de 
+\SI{10}{cm} pour $\indice{K}{D1} = \num{220000}$ et $\indice{K}{D2} = 53$.
+
+
+\begin{figure}[!h]
+\centering
+\includegraphics[width=\linewidth]{fig_13.png}
+\caption{Réponses indicielles du système asservi \label{fig_13}}
+\end{figure}
+
+\question{Commenter les courbes (respect des exigences) et choisir le correcteur qui vous paraît le plus 
+pertinent.}

@@ -1,0 +1,41 @@
+\section{Modélisation du comportement du moteur de coupe}
+\begin{obj}
+Modéliser la chaîne d’asservissement en vitesse du moteur afin de déterminer les paramètres du correcteur permettant de respecter l’exigence 1.2.2.1.
+\end{obj}
+
+
+Le mouvement de coupe est asservi en vitesse. La vitesse de rotation du moteur, notée $\omega_m (t)$, est le paramètre asservi. Elle est mesurée à l’aide d’un codeur incrémental et de son conditionneur qui fournissent une tension $\indice{u}{mes}(t)$, image de la vitesse de rotation du moteur. Cette tension est comparée à la tension consigne $\indice{u}{cons} (t)$, image de la vitesse de rotation de consigne $\indice{\omega}{cons} (t)$ ; un adaptateur fournit $\indice{u}{cons}(t)$ à partir de $\indice{\omega}{cons} (t)$. La tension $\varepsilon(t)=indice{u}{cons}(t) - \indice{u}{mes}(t)$ est alors transformée en tension d’alimentation du moteur $u_m (t)$ par l’ensemble correcteur-variateur.
+
+
+\question{Proposer un schéma-bloc fonctionnel du système.}
+
+\subsection{}
+\begin{obj}
+Modéliser le comportement en vitesse du moteur.
+\end{obj}
+
+
+Le moteur utilisé est un moteur à courant continu dont les caractéristiques sont :
+\begin{itemize}
+\item $R$, résistance de l’induit ;
+\item $L$, inductance de l’induit ;
+\item $k_e$, constante de vitesse ;
+\item $k_c$, constante de couple.
+\end{itemize}
+On donne les quatre équations du modèle d’un moteur à courant continu :
+$u_m (t)=R i(t)+L \dfrac{\dd i(t)}{\dd t}+e(t)$, $J \dfrac{\dd \omega(t)}{\dd t}=c_m (t)+c_r (t)$, $c_m (t)=k_c i(t)$ et $e(t)=K_e \omega(t)$ où :
+\begin{itemize}
+\item $u_m (t)$ est la tension d’alimentation du moteur ;
+\item $i(t)$ est l’intensité traversant l’induit ;
+\item $e(t)$ est la force contre-électromotrice ;
+\item $\omega_m (t)$ est la vitesse de rotation de l’arbre moteur ;
+\item $c_m (t)$ est le couple moteur ;
+\item $c_r (t)$ est le couple résistant ;
+\item $J$ est le moment d’inertie de l’ensemble en mouvement ramené à l’arbre moteur, supposé constant dans cette partie.
+\end{itemize}
+
+La transformée de Laplace d’une fonction temporelle $f(t)$ est notée $F(p)$.
+La fonction de transfert du moteur est notée : $H_m (p)= \dfrac{\Omega_m (p)}{U_m (p)}$.
+
+\question{Exprimer $\Omega_m(p)$ en fonction de $U_m(p)$, $C_r(p)$ et des difféentes constantes.}
+

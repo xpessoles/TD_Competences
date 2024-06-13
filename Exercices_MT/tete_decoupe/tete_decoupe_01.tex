@@ -4,7 +4,7 @@ Modéliser la chaîne d’asservissement en vitesse du moteur afin de détermine
 \end{obj}
 
 
-Le mouvement de coupe est asservi en vitesse. La vitesse de rotation du moteur, notée $\omega_m (t)$, est le paramètre asservi. Elle est mesurée à l’aide d’un codeur incrémental et de son conditionneur qui fournissent une tension $\indice{u}{mes}(t)$, image de la vitesse de rotation du moteur. Cette tension est comparée à la tension consigne $\indice{u}{cons} (t)$, image de la vitesse de rotation de consigne $\indice{\omega}{cons} (t)$ ; un adaptateur fournit $\indice{u}{cons}(t)$ à partir de $\indice{\omega}{cons} (t)$. La tension $\varepsilon(t)=indice{u}{cons}(t) - \indice{u}{mes}(t)$ est alors transformée en tension d’alimentation du moteur $u_m (t)$ par l’ensemble correcteur-variateur.
+Le mouvement de coupe est asservi en vitesse. La vitesse de rotation du moteur, notée $\omega_m (t)$, est le paramètre asservi. Elle est mesurée à l’aide d’un codeur incrémental et de son conditionneur qui fournissent une tension $\indice{u}{mes}(t)$, image de la vitesse de rotation du moteur. Cette tension est comparée à la tension consigne $\indice{u}{cons} (t)$, image de la vitesse de rotation de consigne $\indice{\omega}{cons} (t)$ ; un adaptateur fournit $\indice{u}{cons}(t)$ à partir de $\indice{\omega}{cons} (t)$. La tension $\varepsilon(t)=\indice{u}{cons}(t) - \indice{u}{mes}(t)$ est alors transformée en tension d’alimentation du moteur $u_m (t)$ par l’ensemble correcteur-variateur.
 
 
 \question{Proposer un schéma-bloc fonctionnel du système.}

@@ -1,0 +1,26 @@
+\section{Modélisation du comportement dynamique de la tête de coupe}
+\begin{obj}
+Identifier la cause des vibrations à partir de la modélisation dynamique du comportement
+ de la tête de coupe.
+\end{obj}
+
+
+\paragraph*{Hypotèses de modélisation et notations :}
+\begin{itemize}
+\item le référentiel lié à la table de découpe est supposé galiléen;
+\item les liaisons sont supposées parfaites;
+\item l’action mécanique du moteur sur la manivelle 3 est modélisée par un couple $\vect{C_m} = C_m(t)\vect{y_2}$;
+\item lors de la coupe, le matelas de tissus exerce une action mécanique sur la lame $\vectf{matelas}{lame} = F_a \vy{0}+F_c\vz{0}$ avec $F_a$ l’effort d’avance et $F_c$ l’effort de coupe;
+\item la lame, en mouvement de translation par rapport à la table, a une vitesse notée
+$\vect{V}_{\text{lame/table}} = V_a \vy{0} + \lambdap(t) \vz{0}$ avec $V_a$ la vitesse d’avance du bras par rapport à la table, supposée constante et $\lambdap(t)$ la vitesse de coupe telle que
+$\lambdap (t)=-L_3 \omega_{32} \sin \theta_{32}(t)$;
+\item l’effet de la pesanteur est négligeable devant les autres actions mécaniques;
+\item le moment d’inertie suivant l’axe $\axe{A}{y_2}$ de la manivelle, de masse $M_3=\SI{0,350}{kg}$, ramenée à l’arbre moteur est $J_3=1,2 \times 10^{-4} \si{kg.m^2}$;
+\item la masse et l’inertie de la bielle sont négligées;
+\item la masse de l’ensemble mobile lié à la lame est $M_5= \SI{0,1}{kg}$.
+\end{itemize}
+
+
+\question{En utilisant la méthode de votre choix, donner l'expression littérale du couple moteur $C_m(t)$. Seront préciser le ou les systèmes isolés, le ou les bilans nécessaires et le ou les théorèmes utilisés. }
+
+

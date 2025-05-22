@@ -1,7 +1,6 @@
 \section{Modèle de comportement du solide}
 \begin{obj}
-Il s'agit de déterminer une équation différentielle issue de l'application du théorème de l'énergie puissance 
- afin de modéliser le comportement du fuselage 1.
+Il s'agit de déterminer une équation différentielle permettant de de modéliser le comportement du fuselage 1.
 \end{obj}
 
 \subsubsection*{Notations et hypothèses}
@@ -33,3 +32,28 @@ $F_r = -k \left( \ell - \ell_0\right)$ où $\ell_0$ est la valeur de $\ell$ quan
 \end{itemize}
 
 \question{Déterminer l'équation du mouvement du système.}
+
+
+\section{Structure de la commande asservie de l'amortisseur semi-actif}
+\begin{obj}
+Valider le choix du constructeur de contrôler les accélérations du pylône de queue mpar la maîtrise du mouvement de la cabine.
+\end{obj}
+
+L'équation de comportement de la cabine est donnée par l'équation suivante : 
+$$
+m_2 L^2 \ddot{\theta}^{\star} + \lambda_{\theta} \thetap^{\star} + k_{\theta}\theta^{\star} = m_2 L \ddot{z}.
+$$
+
+On rappelle si nécessaire que dans cette relation, $\theta^{\star} = \theta - \theta_0$ représente la variation angulaire de la queue par rapport à sa position à l’équilibre $\theta_0$. $\thetap^{\star}$ et $\thetapp^{\star}$
+sont ses dérivées successives par rapport au temps, et $\ddot{z}$ est l’accélération absolue de la cabine (voir figure \ref{fig_sia2014_03}).
+
+\question{Montrer qu’à décélération constante de la cabine, l’accélération de la queue tend vers zéro en régime établi.}
+
+\question{En admettant que l’accélération de la queue est maximale à l’instant initial, déterminer son expression notée $\thetapp_{\text{max}}$ en fonction de $A_0$, et $L$. Conclure sur le choix du constructeur de contrôler la décélération de la cabine.}
+
+
+\question{On donne la réponse indicielle du système. Proposer un modèle de comportement du système.}
+
+\begin{center}
+\includegraphics[width=\linewidth]{dr}
+\end{center}
